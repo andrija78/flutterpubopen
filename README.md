@@ -1,65 +1,42 @@
-# flutterpubopen README
+# Flutter Pub Open README
 
-This is the README for your extension "flutterpubopen". After writing up a brief description, we recommend including the following sections.
+This extension will help you open Flutter/Dart package page and API documentation on pub.dev.
+
+It works on all packages specified dependencies and dev_dependencies in pubspec.yaml - excluding flutter, cuppertino_icons and flutter_test.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+Right click on pubspec.yaml in file explorer will show two menu options:
+* All Package APIs on Pub.dev - this will open pub.dev/documentation/package/latest for all packages in pubspec.yaml
+* All Packages on Pub.dev - this will open pub.dev/package for all packages in pubspec.yaml
 
-\!\[feature X\]\(images/feature-x.png\)
+![File Context menu](images/File.PNG)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+Right click on a package name in pubspec.yaml:
+* Package API on Pub.dev - this will open pub.dev/documentation/package/latest for selected package
+* Package on Pub.dev - this will open pub.dev/package for slected package
+![File Context menu](images/Editor.PNG)
+
+
+> Tip: You can set pub.dev as trusted site to prevent VS Code asking you to allow opening URL each time
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+N/A
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+N/A
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+N/A
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
+Initial release of the package.
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

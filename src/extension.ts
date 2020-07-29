@@ -45,14 +45,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const openSelection=async (uriType: String) => {
 		var editor = vscode.window.activeTextEditor;
-		if (!editor) {return;} // No open text editor
+		if (!editor) {return;}
 		
 		var selectedText:String;
 		selectedText = editor.document.getText(editor.selection);
 		if (selectedText==='') {
-			await vscode.commands.executeCommand('editor.action.smartSelect.expand');
-			selectedText = editor.document.getText(editor.selection);
-			//selectedText=await vscode.commands.executeCommand('editor.action.addSelectionToNextFindMatch') || '';
+			await vscode.commands.executeCommand('editor.action.addSelectionToNextFindMatch') || '';
+			selectedText=editor.document.getText(editor.selection);
 		}
 		
 		var doc = editor.document.getText();
@@ -69,10 +68,6 @@ export function activate(context: vscode.ExtensionContext) {
 		} 
 	};
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "flutterpubopen" is now active!');
-	
 	context.subscriptions.push(...[
 
 		vscode.commands.registerCommand(
@@ -89,10 +84,9 @@ export function activate(context: vscode.ExtensionContext) {
 		
 			vscode.commands.registerCommand('flutterpubopen.openPubLinksFromEditor', async (clickedFile: vscode.Uri) => {
 				openSelection('package');
-
 			}),
 
-			vscode.commands.registerCommand('flutterpubopen.openPubApiLinksFromEditor', () => {
+			vscode.commands.registerCommand('flutterpubopen.openPubApiLinksFromEditor', async (clickedFile: vscode.Uri) => {
 				openSelection('api');
 			}),
 

@@ -1,9 +1,14 @@
 {
 	"author": {"name": "Andrija Rubelj", "email": "andrija.rubelj@gmail.com"},
+	"repository": {
+		"type" : "git",
+  	"url" : "https://github.com/andrija78/flutterpubopen.git"
+	},
 	"name": "flutterpubopen",
 	"displayName": "FlutterPubOpen",
 	"description": "Opens pub.dev package and API for your pubspec.yaml dependencies",
 	"version": "0.0.1",
+	"license": "MIT",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -25,36 +30,40 @@
 			},
 			{
 				"command": "flutterpubopen.openPubApiLinks",
-				"title": "All Packages APIs on Pub.dev"
+				"title": "All Package APIs on Pub.dev"
 			},
 			{
 				"command": "flutterpubopen.openPubLinksFromEditor",
-				"title": "This package on Pub.dev"
+				"title": "Package on Pub.dev"
 			},
 			{
 				"command": "flutterpubopen.openPubApiLinksFromEditor",
-				"title": "This package Api on Pub.dev"
+				"title": "Package Api on Pub.dev"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
 					"command": "flutterpubopen.openPubLinks",
-					"when": "resourceFilename == pubspec.yaml"
+					"when": "resourceFilename == pubspec.yaml",
+					"group": "flutterpubopen"
 				},
 				{
 					"command": "flutterpubopen.openPubApiLinks",
-					"when": "resourceFilename == pubspec.yaml"
+					"when": "resourceFilename == pubspec.yaml",
+					"group": "flutterpubopen"
 				}
 			],
 			"editor/context": [
 				{
 					"command": "flutterpubopen.openPubLinksFromEditor",
-					"when": "resourceFilename == pubspec.yaml"
+					"when": "resourceFilename == pubspec.yaml",
+					"group": "flutterpubopen"
 				},
 				{
 					"command": "flutterpubopen.openPubApiLinksFromEditor",
-					"when": "resourceFilename == pubspec.yaml"
+					"when": "resourceFilename == pubspec.yaml",
+					"group": "flutterpubopen"
 				}
 			]
 		}
