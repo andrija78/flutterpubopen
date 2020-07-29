@@ -1,0 +1,30 @@
+name: treseta_app
+description: Jer mi je dosadilo moilti da neko igra samnom
+
+version: 0.3.0
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+  amazon_cognito_identity_dart_2: ^0.1.15
+  mqtt_client: ^7.2.1
+  provider: ^4.3.1
+  async: ^2.4.1
+  shared_preferences: '>=0.5.8 <2.0.0'
+  json_annotation: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^1.10.0
+  json_serializable: ^3.3.0
+
+flutter:
+  uses-material-design: true
+  assets:
+      - assets/

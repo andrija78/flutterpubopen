@@ -1,0 +1,87 @@
+{
+	"author": {"name": "Andrija Rubelj", "email": "andrija.rubelj@gmail.com"},
+	"name": "flutterpubopen",
+	"displayName": "FlutterPubOpen",
+	"description": "Opens pub.dev package and API for your pubspec.yaml dependencies",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:flutterpubopen.openPubLinks",
+		"onCommand:flutterpubopen.openPubApiLinks",
+		"onCommand:flutterpubopen.openPubLinksFromEditor",
+		"onCommand:flutterpubopen.openPubApiLinksFromEditor"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "flutterpubopen.openPubLinks",
+				"title": "All Packages on Pub.dev"
+			},
+			{
+				"command": "flutterpubopen.openPubApiLinks",
+				"title": "All Packages APIs on Pub.dev"
+			},
+			{
+				"command": "flutterpubopen.openPubLinksFromEditor",
+				"title": "This package on Pub.dev"
+			},
+			{
+				"command": "flutterpubopen.openPubApiLinksFromEditor",
+				"title": "This package Api on Pub.dev"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "flutterpubopen.openPubLinks",
+					"when": "resourceFilename == pubspec.yaml"
+				},
+				{
+					"command": "flutterpubopen.openPubApiLinks",
+					"when": "resourceFilename == pubspec.yaml"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "flutterpubopen.openPubLinksFromEditor",
+					"when": "resourceFilename == pubspec.yaml"
+				},
+				{
+					"command": "flutterpubopen.openPubApiLinksFromEditor",
+					"when": "resourceFilename == pubspec.yaml"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"@types/js-yaml": "^3.12.5",
+		"js-yaml": "^3.14.0"
+	}
+}
